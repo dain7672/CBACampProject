@@ -1,0 +1,6 @@
+framework module Pods_CBACampProjectUITests {
+  umbrella header "Pods-CBACampProjectUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

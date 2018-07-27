@@ -1,0 +1,6 @@
+framework module MenuSlider {
+  umbrella header "MenuSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

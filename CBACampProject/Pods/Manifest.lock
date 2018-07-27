@@ -1,0 +1,20 @@
+PODS:
+  - MenuSlider (0.1.7)
+  - SimpleAnimation (0.4.0)
+
+DEPENDENCIES:
+  - MenuSlider (~> 0.1.5)
+  - SimpleAnimation
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MenuSlider
+    - SimpleAnimation
+
+SPEC CHECKSUMS:
+  MenuSlider: 8f2cb5df91196fa77f3c28c67d1350bd35099bcf
+  SimpleAnimation: a3473da5421c65100d68f98a44fc853b81091249
+
+PODFILE CHECKSUM: e10101a32cef3c4bae5110f3bc4567979ec31761
+
+COCOAPODS: 1.5.3
