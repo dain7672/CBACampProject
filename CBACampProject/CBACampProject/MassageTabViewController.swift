@@ -34,25 +34,20 @@ class MassageTabViewController: UIViewController {
         UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let height = self.view.frame.height / 2
-        let width = self.view.frame.width / 2
-        super.viewDidLoad()
-        scrollView.frame.size.width = scrollView.frame.size.width + 20
+    
+    @objc func viewload(_ notification: Notification) {
         let scrollcontainerView = UIView(frame: scrollView.frame)
         scrollView.addSubview(scrollcontainerView)
         
         var inypos = 10
         let inxpos = 20
-        for i in 0...9 {
+        for i in 0..<FirebaseModel.messages.count {
             let cellview = UIView()
             cellview.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0).cgColor
             cellview.layer.borderWidth = 1
             cellview.backgroundColor = UIColor.white
             
-            //높이: 기본값으로 둘 수 있을 것이다. 나중에 max등으로 비교해서 적용하도록.
-            cellview.frame = CGRect(x: 10, y: i * 90 + 10, width : Int(scrollView.frame.width), height: 80)
+            cellview.frame = CGRect(x: 10, y: inypos, width : Int(scrollView.frame.width) - 20, height: 80)
             scrollView.addSubview(cellview)
             
             //profile image, rank name label, name label //////////////////////////////
@@ -66,7 +61,7 @@ class MassageTabViewController: UIViewController {
             
             //textview///////////////////////////////////////
             let textview = UITextView()
-            textview.text = "첫 글입니다 ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
+            textview.text = FirebaseModel.messages[i]
             textview.font = UIFont(name: "NotoSans", size: 16.0)!
             textview.frame.origin = CGPoint(x:inxpos + 35, y:10)
             textview.frame.size = CGSize(width: Int(scrollView.frame.width) - inxpos * 2 - 45, height: 30)
@@ -80,18 +75,29 @@ class MassageTabViewController: UIViewController {
             textview.isEditable = false
             textview.isUserInteractionEnabled = true
             textview.backgroundColor = UIColor.lightGray
+            cellview.frame.size.height = textview.frame.size.height + 20
+            inypos = inypos + 20 + Int(cellview.frame.size.height)
             cellview.addSubview(textview)
             
         }
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: 1000)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width-1, height: max(CGFloat(inypos),scrollView.frame.height+1))
         scrollView.isScrollEnabled = true
         self.view.addSubview(scrollView)
+        
+        
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewDidLoad() {
+        print("viewDidload")
+        NotificationCenter.default.addObserver(self, selector: #selector(viewload), name: NSNotification.Name(rawValue: "got messages"), object: nil)
+        FirebaseModel().getMessages()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
 
     /*
