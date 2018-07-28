@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8F5AAE27F0E3C17D5008EC031996233"
-               BuildableName = "Pods_CBACampProject.framework"
-               BlueprintName = "Pods-CBACampProject"
+               BlueprintIdentifier = "6E25F098619328E14DFAD50DB419E9D2"
+               BuildableName = "Pods_CBACampProjectUITests.framework"
+               BlueprintName = "Pods-CBACampProjectUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8F5AAE27F0E3C17D5008EC031996233"
-            BuildableName = "Pods_CBACampProject.framework"
-            BlueprintName = "Pods-CBACampProject"
+            BlueprintIdentifier = "6E25F098619328E14DFAD50DB419E9D2"
+            BuildableName = "Pods_CBACampProjectUITests.framework"
+            BlueprintName = "Pods-CBACampProjectUITests"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
