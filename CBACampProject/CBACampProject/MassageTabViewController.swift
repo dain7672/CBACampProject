@@ -67,7 +67,7 @@ class MassageTabViewController: UIViewController {
             //textview///////////////////////////////////////
             let textview = UITextView()
             textview.text = "첫 글입니다 ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
-            //textview.font = UIFont(name: "NotoSans", size: 16.0)!
+            textview.font = UIFont(name: "NotoSans", size: 16.0)!
             textview.frame.origin = CGPoint(x:inxpos + 35, y:10)
             textview.frame.size = CGSize(width: Int(scrollView.frame.width) - inxpos * 2 - 45, height: 30)
             let contentSize = textview.sizeThatFits(textview.bounds.size)

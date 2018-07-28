@@ -6,6 +6,8 @@ target 'CBACampProject' do
   use_frameworks!
 pod 'MenuSlider', '~> 0.1.5'
 pod "SimpleAnimation"
+pod 'Firebase/Core'
+
   # Pods for CBACampProject
 
   target 'CBACampProjectTests' do
