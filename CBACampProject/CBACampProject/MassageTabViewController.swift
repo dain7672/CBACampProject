@@ -13,6 +13,9 @@ class MassageTabViewController: UIViewController {
     @IBAction func HambergerAction(_ sender: Any) {
         Hamberger.popIn(fromScale: 1.5, duration: 2, delay: 0)
     }
+
+    
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     var url = URL(string:"http://cbapray.sungrak.or.kr/RetreatSite/RetreatAdd")
@@ -36,12 +39,14 @@ class MassageTabViewController: UIViewController {
     
     
     @objc func viewload(_ notification: Notification) {
+        scrollView.subviews.forEach({$0.removeFromSuperview()})
         let scrollcontainerView = UIView(frame: scrollView.frame)
         scrollView.addSubview(scrollcontainerView)
         
         var inypos = 10
         let inxpos = 20
-        for i in 0..<FirebaseModel.messages.count {
+        let count = FirebaseModel.messages.count
+        for i in 0..<count {
             let cellview = UIView()
             cellview.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0).cgColor
             cellview.layer.borderWidth = 1
@@ -61,7 +66,7 @@ class MassageTabViewController: UIViewController {
             
             //textview///////////////////////////////////////
             let textview = UITextView()
-            textview.text = FirebaseModel.messages[i]
+            textview.text = FirebaseModel.messages[count - i - 1]
             textview.font = UIFont(name: "NotoSans", size: 16.0)!
             textview.frame.origin = CGPoint(x:inxpos + 35, y:10)
             textview.frame.size = CGSize(width: Int(scrollView.frame.width) - inxpos * 2 - 45, height: 30)

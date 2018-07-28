@@ -8,6 +8,8 @@ pod 'MenuSlider', '~> 0.1.5'
 pod "SimpleAnimation"
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Messaging'
+
   # Pods for CBACampProject
 
   target 'CBACampProjectTests' do

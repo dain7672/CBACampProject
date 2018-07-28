@@ -51,6 +51,7 @@
 		DB764E4F210C87EA006E72EB /* NotoSansKR_Regular.woff in Resources */ = {isa = PBXBuildFile; fileRef = DB764E4C210C873F006E72EB /* NotoSansKR_Regular.woff */; };
 		DB764E50210C87EA006E72EB /* NotoSansUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB764E4B210C873F006E72EB /* NotoSansUI-Regular.ttf */; };
 		DB764E52210C8A2E006E72EB /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB764E51210C8A2E006E72EB /* FirebaseModel.swift */; };
+		DB764E54210C98FD006E72EB /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DB764E53210C98FD006E72EB /* refresh.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		DB764E4B210C873F006E72EB /* NotoSansUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Regular.ttf"; sourceTree = "<group>"; };
 		DB764E4C210C873F006E72EB /* NotoSansKR_Regular.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansKR_Regular.woff; sourceTree = "<group>"; };
 		DB764E51210C8A2E006E72EB /* FirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		DB764E53210C98FD006E72EB /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		DB764E55210CA1CD006E72EB /* CBACampProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CBACampProject.entitlements; sourceTree = "<group>"; };
 		DB8291F6F1B62C27874E2A6E /* Pods-CBACampProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProjectTests/Pods-CBACampProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE653964FC37D8A319CC1C32 /* Pods-CBACampProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProjectTests/Pods-CBACampProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +187,7 @@
 		042761C92106E41400928EB7 /* CBACampProject */ = {
 			isa = PBXGroup;
 			children = (
+				DB764E55210CA1CD006E72EB /* CBACampProject.entitlements */,
 				DB764E51210C8A2E006E72EB /* FirebaseModel.swift */,
 				DB764E44210C74BC006E72EB /* GoogleService-Info.plist */,
 				04F0F54C2109FBD6001B953B /* UIView+SimpleAnimation.swift */,
@@ -225,6 +229,7 @@
 		04E3728421071B0300FB7304 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DB764E53210C98FD006E72EB /* refresh.png */,
 				DB764E42210C7206006E72EB /* profile.png */,
 				04FC00D1210AEC0000528D7A /* Blank.png */,
 				04FC00D2210AEC0000528D7A /* Blog.png */,
@@ -356,6 +361,14 @@
 					042761C62106E41400928EB7 = {
 						CreatedOnToolsVersion = 9.4.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					042761DA2106E41600928EB7 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -407,6 +420,7 @@
 				DB764E4F210C87EA006E72EB /* NotoSansKR_Regular.woff in Resources */,
 				042761D22106E41600928EB7 /* Assets.xcassets in Resources */,
 				04FC00E1210AEC0100528D7A /* Insta.png in Resources */,
+				DB764E54210C98FD006E72EB /* refresh.png in Resources */,
 				04FC00E2210AEC0100528D7A /* hamberger.png in Resources */,
 				04FC00ED210AEC0100528D7A /* CBA.jpeg in Resources */,
 				042761D02106E41400928EB7 /* Main.storyboard in Resources */,
@@ -469,6 +483,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CBACampProject/Pods-CBACampProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MenuSlider/MenuSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleAnimation/SimpleAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -477,6 +492,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MenuSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -713,6 +729,7 @@
 			baseConfigurationReference = A8AA70A5C2F43BEBFFC6F7D6 /* Pods-CBACampProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CBACampProject/CBACampProject.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJXHH5P6P4;
@@ -732,6 +749,7 @@
 			baseConfigurationReference = A5A9910A5EB74008CEDE0AD6 /* Pods-CBACampProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CBACampProject/CBACampProject.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJXHH5P6P4;
