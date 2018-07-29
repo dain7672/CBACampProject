@@ -36,13 +36,13 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        image = UIImage(named: "CampTimetable.png")!
+        image = UIImage(named: "winter-timetable.jpeg")!
         
         imageView = UIImageView(image: image)
-        imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (image?.size)!)
+        imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (self.view.frame.size))
         ScrollView.addSubview(imageView)
         
-        ScrollView.contentSize = (image?.size)!
+        ScrollView.contentSize = (self.view.frame.size)
         
         var doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScheduleTabViewController.scrollViewDoubleTapped(_:)))
         doubleTapRecognizer.numberOfTapsRequired = 2

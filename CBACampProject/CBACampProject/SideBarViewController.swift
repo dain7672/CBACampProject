@@ -146,9 +146,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem3 = SideMenuItemFactory.make(title: "강의 안내") {
-            self.pageImages = [UIImage(named: "Test3.png")!,
-                               UIImage(named: "Test4.png")!,
-                               UIImage(named: "Test1.png")!]
+            self.pageImages = [UIImage(named: "winter-lecture.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -184,9 +182,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem5 = SideMenuItemFactory.make(title: "식단 안내") {
-            self.pageImages = [UIImage(named: "Test1.png")!,
-                               UIImage(named: "Test2.png")!,
-                               UIImage(named: "Test3.png")!]
+            self.pageImages = [UIImage(named: "winter-menu.jpeg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -203,9 +199,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem6 = SideMenuItemFactory.make(title: "식당/간식 봉사") {
-            self.pageImages = [UIImage(named: "Test2.png")!,
-                               UIImage(named: "Test3.png")!,
-                               UIImage(named: "Test4.png")!]
+            self.pageImages = [UIImage(named: "winter-meal.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -222,9 +216,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem7 = SideMenuItemFactory.make(title: "청소구역") {
-            self.pageImages = [UIImage(named: "Test3.png")!,
-                               UIImage(named: "Test4.png")!,
-                               UIImage(named: "Test1.png")!]
+            self.pageImages = [UIImage(named: "winter-cleaning.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -242,7 +234,6 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         
         // Creating a Menu Header with title string
         let menuheader = SideMenuHeaderFactory.make(title: "환언, 우리들의 사명")
-        
         let footerLabel = UILabel()
         footerLabel.text = "환언, 우리들의 사명"
         footerLabel.textAlignment = NSTextAlignment.center
