@@ -117,9 +117,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "Test1.png")!,
-                               UIImage(named: "Test2.png")!,
-                               UIImage(named: "Test3.png")!]
+            self.pageImages = [UIImage(named: "이미지준비중.jpg")!,
+                               UIImage(named: "이미지준비중.jpg")!,
+                               UIImage(named: "이미지준비중.jpg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -141,9 +141,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "Test2.png")!,
-                          UIImage(named: "Test3.png")!,
-                          UIImage(named: "Test4.png")!]
+            self.pageImages = [UIImage(named: "이미지준비중.jpg")!,
+                          UIImage(named: "이미지준비중.jpg")!,
+                          UIImage(named: "이미지준비중.jpg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -187,9 +187,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "Test4.png")!,
-                               UIImage(named: "Test1.png")!,
-                               UIImage(named: "Test2.png")!]
+            self.pageImages = [UIImage(named: "이미지준비중.jpg")!,
+                               UIImage(named: "이미지준비중.jpg")!,
+                               UIImage(named: "이미지준비중.jpg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0

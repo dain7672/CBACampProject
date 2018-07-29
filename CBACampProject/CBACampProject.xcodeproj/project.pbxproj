@@ -45,6 +45,7 @@
 		CD336A15F030D36C9BF372D9 /* Pods_CBACampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF2674131475F1006677968 /* Pods_CBACampProject.framework */; };
 		D0418F1886311AD4148F73D8 /* Pods_CBACampProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16957FFF49742B9F1DFD76B /* Pods_CBACampProjectTests.framework */; };
 		DB3A8868210E3A7000E6DA14 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A8867210E3A7000E6DA14 /* Message.swift */; };
+		DB3A886C210E54FD00E6DA14 /* 이미지준비중.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB3A886B210E54FD00E6DA14 /* 이미지준비중.jpg */; };
 		DB764E43210C7207006E72EB /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DB764E42210C7206006E72EB /* profile.png */; };
 		DB764E45210C74BC006E72EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB764E44210C74BC006E72EB /* GoogleService-Info.plist */; };
 		DB764E4D210C87EA006E72EB /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB764E4A210C873F006E72EB /* NotoSans-Bold.ttf */; };
@@ -132,6 +133,7 @@
 		A8AA70A5C2F43BEBFFC6F7D6 /* Pods-CBACampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProject/Pods-CBACampProject.debug.xcconfig"; sourceTree = "<group>"; };
 		C16957FFF49742B9F1DFD76B /* Pods_CBACampProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBACampProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3A8867210E3A7000E6DA14 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DB3A886B210E54FD00E6DA14 /* 이미지준비중.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "이미지준비중.jpg"; sourceTree = "<group>"; };
 		DB764E42210C7206006E72EB /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		DB764E44210C74BC006E72EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB764E49210C873F006E72EB /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		04E3728421071B0300FB7304 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DB3A886B210E54FD00E6DA14 /* 이미지준비중.jpg */,
 				DB764E60210E1EB8006E72EB /* 환언_long.jpeg */,
 				DB764E5E210E0A3D006E72EB /* applybutton.png */,
 				DB764E5C210E0915006E72EB /* hwanun-40@3x.png */,
@@ -469,6 +472,7 @@
 				DB764E5D210E0915006E72EB /* hwanun-40@3x.png in Resources */,
 				DB764E5B210E0305006E72EB /* 환언_mini.jpeg in Resources */,
 				04FC00E8210AEC0100528D7A /* Youtube.png in Resources */,
+				DB3A886C210E54FD00E6DA14 /* 이미지준비중.jpg in Resources */,
 				04FC00E5210AEC0100528D7A /* CampBackground.jpeg in Resources */,
 				DB764E59210CB9C4006E72EB /* 환언포스터.jpeg in Resources */,
 				DB764E45210C74BC006E72EB /* GoogleService-Info.plist in Resources */,
