@@ -12,14 +12,13 @@ import FirebaseDatabase
 
 class FirebaseModel {
     static var messages = [Message]()
+    static var schedule = ""
+    
     func getMessages() {
         var ref: DatabaseReference!
         print("trying to get messages....")
         
         ref = Database.database().reference().child("messages")
-//        ref.queryOrderedByKey().observe(DataEventType.value) { (snapshot) in
-//            print(snapshot.children.allObjects)
-//        }
         ref.queryOrderedByKey().observe(DataEventType.value, with: { (snapshot) in
             if let result = snapshot.children.allObjects as? [DataSnapshot]{
                 FirebaseModel.messages = []
@@ -32,6 +31,19 @@ class FirebaseModel {
                 }
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "got messages"), object: self)
             }
+        })
+    }
+    
+    func getSchedule() {
+        var ref: DatabaseReference!
+        print("trying to get schedule...")
+        
+        ref = Database.database().reference().child("images").child("schedule")
+        ref.observeSingleEvent(of: .value, with: {(snapshot) in
+            let value = snapshot.value as? String ?? ""
+            print(value)
+            FirebaseModel.schedule = value
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "got schedule"), object: self)
         })
     }
 }
