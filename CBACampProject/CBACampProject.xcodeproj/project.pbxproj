@@ -52,6 +52,8 @@
 		DB764E50210C87EA006E72EB /* NotoSansUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB764E4B210C873F006E72EB /* NotoSansUI-Regular.ttf */; };
 		DB764E52210C8A2E006E72EB /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB764E51210C8A2E006E72EB /* FirebaseModel.swift */; };
 		DB764E54210C98FD006E72EB /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DB764E53210C98FD006E72EB /* refresh.png */; };
+		DB764E57210CB9A1006E72EB /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB764E56210CB9A1006E72EB /* Icon-60@3x.png */; };
+		DB764E59210CB9C4006E72EB /* 환언포스터.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DB764E58210CB9C4006E72EB /* 환언포스터.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		DB764E51210C8A2E006E72EB /* FirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		DB764E53210C98FD006E72EB /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		DB764E55210CA1CD006E72EB /* CBACampProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CBACampProject.entitlements; sourceTree = "<group>"; };
+		DB764E56210CB9A1006E72EB /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		DB764E58210CB9C4006E72EB /* 환언포스터.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "환언포스터.jpeg"; sourceTree = "<group>"; };
 		DB8291F6F1B62C27874E2A6E /* Pods-CBACampProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProjectTests/Pods-CBACampProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE653964FC37D8A319CC1C32 /* Pods-CBACampProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProjectTests/Pods-CBACampProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,7 +233,9 @@
 		04E3728421071B0300FB7304 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DB764E56210CB9A1006E72EB /* Icon-60@3x.png */,
 				DB764E53210C98FD006E72EB /* refresh.png */,
+				DB764E58210CB9C4006E72EB /* 환언포스터.jpeg */,
 				DB764E42210C7206006E72EB /* profile.png */,
 				04FC00D1210AEC0000528D7A /* Blank.png */,
 				04FC00D2210AEC0000528D7A /* Blog.png */,
@@ -413,6 +419,7 @@
 				04FC00EB210AEC0100528D7A /* CampText.png in Resources */,
 				042761D52106E41600928EB7 /* LaunchScreen.storyboard in Resources */,
 				04FC00E7210AEC0100528D7A /* Main.jpg in Resources */,
+				DB764E57210CB9A1006E72EB /* Icon-60@3x.png in Resources */,
 				04FC00DC210AEC0100528D7A /* CampPoster.jpeg in Resources */,
 				04FC00E4210AEC0100528D7A /* Blog.png in Resources */,
 				04FC00DF210AEC0100528D7A /* Test3.png in Resources */,
@@ -426,6 +433,7 @@
 				042761D02106E41400928EB7 /* Main.storyboard in Resources */,
 				04FC00E8210AEC0100528D7A /* Youtube.png in Resources */,
 				04FC00E5210AEC0100528D7A /* CampBackground.jpeg in Resources */,
+				DB764E59210CB9C4006E72EB /* 환언포스터.jpeg in Resources */,
 				DB764E45210C74BC006E72EB /* GoogleService-Info.plist in Resources */,
 				04FC00F1210AF31F00528D7A /* Berea1.png in Resources */,
 				DB764E50210C87EA006E72EB /* NotoSansUI-Regular.ttf in Resources */,
