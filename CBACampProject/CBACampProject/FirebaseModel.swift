@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class FirebaseModel {
-    static var messages = [String]()
+    static var messages = [Message]()
     func getMessages() {
         var ref: DatabaseReference!
         print("trying to get messages....")
@@ -25,9 +25,10 @@ class FirebaseModel {
                 FirebaseModel.messages = []
                 for child in result {
                     let snapshotValue = child.value as! [String: AnyObject]
-                    var message = snapshotValue["message"] as? String ?? "N/A"
+                    let message = snapshotValue["message"] as? String ?? ""
+                    let time = snapshotValue["time"] as? String ?? ""
                     print(message)
-                    FirebaseModel.messages.append(message)
+                    FirebaseModel.messages.append(Message(text: message, time: time))
                 }
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "got messages"), object: self)
             }

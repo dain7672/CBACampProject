@@ -27,7 +27,7 @@
 		<string>NotoSans-Regular.ttf</string>
 		<string>NotoSans-Bold.ttf</string>
 		<string>NotoSansKR_Regular.woff</string>
-		<string>NotoSansUI_Regular.ttf</string>
+		<string>NotoSansUI-Regular.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

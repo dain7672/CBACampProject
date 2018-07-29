@@ -44,6 +44,7 @@
 		5699D27FFD7B4A68160C50C0 /* Pods_CBACampProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B955FCBB83F23A00B428D65 /* Pods_CBACampProjectUITests.framework */; };
 		CD336A15F030D36C9BF372D9 /* Pods_CBACampProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF2674131475F1006677968 /* Pods_CBACampProject.framework */; };
 		D0418F1886311AD4148F73D8 /* Pods_CBACampProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16957FFF49742B9F1DFD76B /* Pods_CBACampProjectTests.framework */; };
+		DB3A8868210E3A7000E6DA14 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A8867210E3A7000E6DA14 /* Message.swift */; };
 		DB764E43210C7207006E72EB /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DB764E42210C7206006E72EB /* profile.png */; };
 		DB764E45210C74BC006E72EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB764E44210C74BC006E72EB /* GoogleService-Info.plist */; };
 		DB764E4D210C87EA006E72EB /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB764E4A210C873F006E72EB /* NotoSans-Bold.ttf */; };
@@ -130,6 +131,7 @@
 		A5A9910A5EB74008CEDE0AD6 /* Pods-CBACampProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProject/Pods-CBACampProject.release.xcconfig"; sourceTree = "<group>"; };
 		A8AA70A5C2F43BEBFFC6F7D6 /* Pods-CBACampProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProject/Pods-CBACampProject.debug.xcconfig"; sourceTree = "<group>"; };
 		C16957FFF49742B9F1DFD76B /* Pods_CBACampProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBACampProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3A8867210E3A7000E6DA14 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DB764E42210C7206006E72EB /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		DB764E44210C74BC006E72EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB764E49210C873F006E72EB /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				047CC6662108E8950054C395 /* SideBarViewController.swift */,
 				046C83A2210984AA00176FDE /* MapViewController.swift */,
 				04955EFA210A24320057FD68 /* Location.swift */,
+				DB3A8867210E3A7000E6DA14 /* Message.swift */,
 			);
 			path = CBACampProject;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				04E372812107146F00FB7304 /* MassageTabViewController.swift in Sources */,
 				04E372832107148C00FB7304 /* CBAInfoTabViewController.swift in Sources */,
 				04A157B021083F410015DA0B /* TestViewController.swift in Sources */,
+				DB3A8868210E3A7000E6DA14 /* Message.swift in Sources */,
 				04E3727F2107106A00FB7304 /* ScheduleTabViewController.swift in Sources */,
 				046C83A3210984AA00176FDE /* MapViewController.swift in Sources */,
 			);

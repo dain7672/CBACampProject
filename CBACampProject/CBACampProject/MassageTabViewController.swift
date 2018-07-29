@@ -93,8 +93,8 @@ class MassageTabViewController: UIViewController {
             
             //textview///////////////////////////////////////
             let textview = UITextView()
-            textview.text = FirebaseModel.messages[count - i - 1]
-            textview.font = UIFont(name: "NotoSans", size: 16.0)!
+            textview.text = FirebaseModel.messages[count - i - 1].text
+            textview.font = UIFont(name: "NotoSans", size: 18.0)!
             textview.frame.origin = CGPoint(x:inxpos, y:nextypos)
             textview.frame.size = CGSize(width: Int(scrollView.frame.width) - inxpos * 2, height: 30)
             let contentSize = textview.sizeThatFits(textview.bounds.size)
@@ -106,13 +106,23 @@ class MassageTabViewController: UIViewController {
             textview.isScrollEnabled = false
             textview.isEditable = false
             textview.isUserInteractionEnabled = true
-            nextypos = Int(textview.frame.origin.y + textview.frame.size.height + 15)
+            nextypos = Int(textview.frame.origin.y + textview.frame.size.height + 8)
+            
+            
+            ///timelabel
+            let timelabel = UILabel()
+            timelabel.text = FirebaseModel.messages[count - i - 1].time
+            timelabel.font = UIFont(name:"NotoSansUI", size: 14.0)!
+            timelabel.textColor = UIColor.lightGray
+            timelabel.sizeToFit()
+            timelabel.frame.origin = CGPoint(x: Int(cellview.frame.width - timelabel.frame.width) - inxpos, y: nextypos)
+            cellview.addSubview(timelabel)
+            
+            nextypos += Int(timelabel.frame.size.height) + 12
+            
+            
             cellview.frame.size.height = CGFloat(nextypos)
-            
-            
             inypos += 7 + Int(cellview.frame.size.height) //다음 CellView의 위치
-            
-            
             cellview.addSubview(textview)
             
         }
