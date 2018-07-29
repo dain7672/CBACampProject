@@ -27,6 +27,9 @@ class SideMenuHeaderViewController: UIViewController {
 
 	func setLabel(text: String) {
 		self.label.text = text
+        self.label.font = UIFont(name: "NotoSans-Bold", size: 18.0)!
+        self.label.sizeToFit()
+        self.label.frame.origin.x = self.headerView.frame.size.width / 2 - self.label.frame.size.width / 2
 	}
 
     override func didReceiveMemoryWarning() {

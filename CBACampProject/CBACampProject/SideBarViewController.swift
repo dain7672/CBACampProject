@@ -37,8 +37,8 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
     // Optionally function onMenuClose(), fired when user closes menu
     func onMenuClose() {
         print("Action on Close Menu")
-        MainView.fadeIn(duration: 0.5, delay: 0.0)
-        MainView.popIn()
+        //MainView.fadeIn(duration: 0.5, delay: 0.0)
+        //MainView.popIn()
         //MainView.(fromScale: 1, duration: 1, delay: 0.5)
     }
     
@@ -104,9 +104,19 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
     override func viewDidLoad() {
         super.viewDidLoad()
         //menu.expand(onController: self)
+        //self.scrollView.frame.origin.y = 10
+        self.scrollView.frame.size.width = self.view.frame.size.width
+        self.scrollView.frame.size.height = self.view.frame.size.height - 90
+        
+        self.pageControl.frame.origin.y = self.view.frame.size.height - 40
+        self.pageControl.frame.origin.x = self.view.frame.size.width / 2 - self.pageControl.frame.size.width / 2
         
         // Creating a Menu Item with title string, with an action
         let menuItem1: SideMenuItem = SideMenuItemFactory.make(title: "캠퍼스 모임장소") {
+            for view in self.pageViews {
+                view?.removeFromSuperview()
+            }
+            self.pageViews = []
             self.pageImages = [UIImage(named: "Test1.png")!,
                                UIImage(named: "Test2.png")!,
                                UIImage(named: "Test3.png")!]
@@ -127,6 +137,10 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         
         // Creating a Menu Item with title string, without an action
         let menuItem2 = SideMenuItemFactory.make(title: "GBS장소") {
+            for view in self.pageViews {
+                view?.removeFromSuperview()
+            }
+            self.pageViews = []
             self.pageImages = [UIImage(named: "Test2.png")!,
                           UIImage(named: "Test3.png")!,
                           UIImage(named: "Test4.png")!]
@@ -146,7 +160,13 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem3 = SideMenuItemFactory.make(title: "강의 안내") {
-            self.pageImages = [UIImage(named: "winter-lecture.png")!]
+            for view in self.pageViews {
+                view?.removeFromSuperview()
+            }
+            self.pageViews = []
+            self.pageImages = [UIImage(named: "winter-lecture.png")!,
+                                UIImage(named: "winter-lecture.png")!,
+                                UIImage(named: "winter-lecture.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -163,6 +183,10 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem4 = SideMenuItemFactory.make(title: "숙소 안내") {
+            for view in self.pageViews {
+                view?.removeFromSuperview()
+            }
+            self.pageViews = []
             self.pageImages = [UIImage(named: "Test4.png")!,
                                UIImage(named: "Test1.png")!,
                                UIImage(named: "Test2.png")!]
@@ -182,7 +206,13 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem5 = SideMenuItemFactory.make(title: "식단 안내") {
-            self.pageImages = [UIImage(named: "winter-menu.jpeg")!]
+            for view in self.pageViews {
+                view?.removeFromSuperview()
+            }
+            self.pageViews = []
+            self.pageImages = [UIImage(named: "winter-menu.jpeg")!,
+                                UIImage(named: "winter-menu.jpeg")!,
+                                UIImage(named: "winter-menu.jpeg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -199,7 +229,13 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem6 = SideMenuItemFactory.make(title: "식당/간식 봉사") {
-            self.pageImages = [UIImage(named: "winter-meal.png")!]
+            for view in self.pageViews {
+                view?.removeFromSuperview()
+            }
+            self.pageViews = []
+            self.pageImages = [UIImage(named: "winter-meal.png")!,
+                                UIImage(named: "winter-meal.png")!,
+                                UIImage(named: "winter-meal.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -216,7 +252,13 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         let menuItem7 = SideMenuItemFactory.make(title: "청소구역") {
-            self.pageImages = [UIImage(named: "winter-cleaning.png")!]
+            for view in self.pageViews {
+                view?.removeFromSuperview()
+            }
+            self.pageViews = []
+            self.pageImages = [UIImage(named: "winter-cleaning.png")!,
+                                UIImage(named: "winter-cleaning.png")!,
+                                UIImage(named: "winter-cleaning.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -233,9 +275,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
         
         // Creating a Menu Header with title string
-        let menuheader = SideMenuHeaderFactory.make(title: "환언, 우리들의 사명")
+        let menuheader = SideMenuHeaderFactory.make(title: "환언, 우리의 사명")
         let footerLabel = UILabel()
-        footerLabel.text = "환언, 우리들의 사명"
+        footerLabel.text = "환언, 우리의 사명"
         footerLabel.textAlignment = NSTextAlignment.center
         footerLabel.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         let footerView: UIView = UIView()
