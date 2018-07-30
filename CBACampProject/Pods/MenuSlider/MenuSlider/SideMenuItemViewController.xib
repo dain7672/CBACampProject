@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuItemViewController" customModule="MenuSlider" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuItemViewController" customModule="_10SideMenu" customModuleProvider="target">
             <connections>
-                <outlet property="Image" destination="7Qy-zr-HXa" id="n0O-vY-nZV"/>
                 <outlet property="labelText" destination="R0d-HB-3Hi" id="wCY-OU-IcG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="SFX-q9-vB6"/>
             </connections>
@@ -28,17 +27,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Qy-zr-HXa">
-                    <rect key="frame" x="0.0" y="0.0" width="257" height="66"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="7Qy-zr-HXa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="A0E-29-W5j"/>
-                <constraint firstItem="7Qy-zr-HXa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N1m-gp-f1U"/>
-                <constraint firstAttribute="bottom" secondItem="7Qy-zr-HXa" secondAttribute="bottom" id="SRh-SS-s21"/>
-                <constraint firstAttribute="trailing" secondItem="7Qy-zr-HXa" secondAttribute="trailing" id="zoN-4d-faf"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="24.5" y="52"/>

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Kingfisher
+import Firebase
+import FirebaseStorage
 
 class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var Hamberger: UIButton!
@@ -32,17 +35,22 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
-
+    
+    func downloadImage(name: String){
+        Storage.storage().reference(withPath: name).downloadURL { (url, error) in
+            self.imageView.kf.setImage(with: url)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView = UIImageView(image: UIImage(named: ""))
+        downloadImage(name: "timetable.png")
         
-        image = UIImage(named: "CampTimetable.png")!
-        
-        imageView = UIImageView(image: image)
-        imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (image?.size)!)
+        imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (self.view.frame.size))
         ScrollView.addSubview(imageView)
         
-        ScrollView.contentSize = (image?.size)!
+        ScrollView.contentSize = (self.view.frame.size)
         
         var doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScheduleTabViewController.scrollViewDoubleTapped(_:)))
         doubleTapRecognizer.numberOfTapsRequired = 2
@@ -57,9 +65,10 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
         
         ScrollView.maximumZoomScale = 1.0
         ScrollView.zoomScale = minScale
-
+        
         centerScrollViewContents()
         // Do any additional setup after loading the view.
+        
     }
     
     func centerScrollViewContents(){

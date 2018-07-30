@@ -10,9 +10,7 @@ import UIKit
 
 public class SideMenuItemViewController: UIViewController {
 
-    var image : UIImage?
-    @IBOutlet weak var Image: UIImageView!
-    @IBOutlet weak var labelText: UILabel!
+	@IBOutlet weak var labelText: UILabel!
 
 	public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -22,12 +20,8 @@ public class SideMenuItemViewController: UIViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-    func setLabel(text: String) {
-        self.image = UIImage(named: "CampBackground.jpeg")
-        self.Image.alpha = 0.1
-        self.Image.image = self.image
-        
-        self.labelText?.text? = text
-    }
+	public func setLabel(text: String) {
+		self.labelText?.text? = text
+	}
 
 }

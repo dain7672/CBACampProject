@@ -10,11 +10,9 @@ import UIKit
 
 class SideMenuHeaderViewController: UIViewController {
 
-    var image : UIImage?
 	@IBOutlet var headerView: UIView!
 	@IBOutlet weak var label: UILabel!
-    @IBOutlet weak var Image: UIImageView!
-    
+
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -28,8 +26,10 @@ class SideMenuHeaderViewController: UIViewController {
     }
 
 	func setLabel(text: String) {
-        self.image = UIImage(named: "Berea1.png")
-        self.Image.image = self.image
+		self.label.text = text
+        self.label.font = UIFont(name: "NotoSans-Bold", size: 18.0)!
+        self.label.sizeToFit()
+        self.label.frame.origin.x = self.headerView.frame.size.width / 2 - self.label.frame.size.width / 2
 	}
 
     override func didReceiveMemoryWarning() {
