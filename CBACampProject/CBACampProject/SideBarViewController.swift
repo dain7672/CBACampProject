@@ -21,6 +21,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
     var image : UIImage?
     var Check : Bool?
     
+    @IBAction func BackScreenAction(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
     
     // Implementing var menu, coming from SideMenuDelegate Protocol
     var menu: SideMenuViewController!
@@ -86,14 +89,20 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         let firstPage = page - 1
         let lastPage = page + 1
         
-        for index in 0 ..< firstPage+1{
-            purgePage(index)
+        for i in 0 ..< firstPage+1{
+            purgePage(i)
         }
-        for index in firstPage ... lastPage{
-            loadPage(index)
+        for i in firstPage ... lastPage{
+            loadPage(i)
         }
-        for index in lastPage+1 ..< pageImages.count+1{
-            purgePage(index)
+        /*
+        for i in lastPage+1 ..< pageImages.count+1{
+            purgePage(i)
+        }
+        */
+        for i in stride(from: lastPage+1  , to: pageImages.count+1, by: 1)
+        {
+            purgePage(i)
         }
     }
     
