@@ -110,6 +110,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "CBACAmpProject"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
