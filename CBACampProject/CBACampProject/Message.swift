@@ -11,9 +11,11 @@ import Foundation
 class Message {
     var text : String
     var time : String
+    var auth : String
     
-    init(text: String, time:String) {
+    init(text: String, time:String, auth:String) {
         self.text = text
         self.time = time
+        self.auth = auth
     }
 }

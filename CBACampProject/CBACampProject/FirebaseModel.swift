@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import Kingfisher
+import FirebaseStorage
 
 class FirebaseModel {
     static var messages = [Message]()
@@ -26,12 +28,19 @@ class FirebaseModel {
                     let snapshotValue = child.value as! [String: AnyObject]
                     let message = snapshotValue["message"] as? String ?? ""
                     let time = snapshotValue["time"] as? String ?? ""
+                    let auth = snapshotValue["author"] as? String ?? ""
                     print(message)
-                    FirebaseModel.messages.append(Message(text: message, time: time))
+                    FirebaseModel.messages.append(Message(text: message, time: time, auth: auth))
                 }
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "got messages"), object: self)
             }
         })
+    }
+    
+    func downloadImage(name: String, imageView:UIImageView){
+        Storage.storage().reference(withPath: name).downloadURL { (url, error) in
+            imageView.kf.setImage(with: url)
+        }
     }
     
     func getSchedule() {

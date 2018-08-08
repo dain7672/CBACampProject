@@ -18,7 +18,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
     @IBOutlet weak var imageView: UIImageView!
     
     var pageImages: [UIImage] = []
+    var downloadImageNames: [String] = []
     var pageViews: [UIImageView?] = []
+    var firebaseModel: FirebaseModel = FirebaseModel()
     
     var image : UIImage?
     var Check : Bool?
@@ -67,6 +69,10 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let newPageView = UIImageView(image: pageImages[page])
             newPageView.contentMode = .scaleAspectFit
             newPageView.frame = frame
+            if (downloadImageNames.count > page) {
+                print("downloading!", downloadImageNames.count, "/", page)
+                firebaseModel.downloadImage(name: downloadImageNames[page], imageView: newPageView)
+            }
             scrollView.addSubview(newPageView)
             
             pageViews[page] = newPageView
@@ -89,14 +95,17 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
         pageControl.currentPage = page
         
-        let firstPage = page - 1
-        let lastPage = page + 1
+        let firstPage = 0
+        let lastPage = pageImages.count - 1
+        
         
         for i in 0 ..< firstPage+1{
             purgePage(i)
+            print("purging...", i)
         }
         for i in firstPage ... lastPage{
             loadPage(i)
+            print("loading...",i)
         }
         /*
         for i in lastPage+1 ..< pageImages.count+1{
@@ -109,9 +118,10 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView){
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         loadVisiblePages()
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,9 +143,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "이미지준비중.jpg")!,
-                               UIImage(named: "이미지준비중.jpg")!,
-                               UIImage(named: "이미지준비중.jpg")!]
+            self.pageImages = [UIImage(named: "이미지준비중.png")!,
+                               UIImage(named: "이미지준비중.png")!,
+                               UIImage(named: "이미지준비중.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -148,6 +158,8 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let pagesScrollViewSize = self.scrollView.frame.size
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
+            //self.downloadImageNames = ["campus_place1.png","campus_place2.png","campus_place3.png"]
+            self.downloadImageNames = ["campus_place1.png","mealwork.png","menu.png"]
             self.loadVisiblePages()
         }
         
@@ -157,9 +169,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "이미지준비중.jpg")!,
-                          UIImage(named: "이미지준비중.jpg")!,
-                          UIImage(named: "이미지준비중.jpg")!]
+            self.pageImages = [UIImage(named: "gbs장소1.png")!,
+                          UIImage(named: "gbs장소2.png")!,
+                          UIImage(named: "gbs장소3.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -172,6 +184,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let pagesScrollViewSize = self.scrollView.frame.size
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
+            self.downloadImageNames = []
             self.loadVisiblePages()
         }
         
@@ -193,6 +206,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let pagesScrollViewSize = self.scrollView.frame.size
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
+            self.downloadImageNames = []
             self.loadVisiblePages()
         }
         
@@ -201,9 +215,9 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "이미지준비중.jpg")!,
-                               UIImage(named: "이미지준비중.jpg")!,
-                               UIImage(named: "이미지준비중.jpg")!]
+            self.pageImages = [UIImage(named: "숙소1.jpg")!,
+                               UIImage(named: "숙소2.jpg")!,
+                               UIImage(named: "숙소3.jpg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -216,6 +230,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let pagesScrollViewSize = self.scrollView.frame.size
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
+            self.downloadImageNames = []
             self.loadVisiblePages()
         }
         
@@ -224,9 +239,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "winter-menu.jpeg")!,
-                                UIImage(named: "winter-menu.jpeg")!,
-                                UIImage(named: "winter-menu.jpeg")!]
+            self.pageImages = [UIImage(named: "이미지준비중.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -239,6 +252,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let pagesScrollViewSize = self.scrollView.frame.size
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
+            self.downloadImageNames = ["menu.png"]
             self.loadVisiblePages()
         }
         
@@ -247,9 +261,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "winter-meal.png")!,
-                                UIImage(named: "winter-meal.png")!,
-                                UIImage(named: "winter-meal.png")!]
+            self.pageImages = [UIImage(named: "이미지준비중.png")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -262,6 +274,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let pagesScrollViewSize = self.scrollView.frame.size
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
+            self.downloadImageNames = ["mealwork.png"]
             self.loadVisiblePages()
         }
         
@@ -283,6 +296,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             let pagesScrollViewSize = self.scrollView.frame.size
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
+            self.downloadImageNames = []
             self.loadVisiblePages()
         }
         
@@ -312,7 +326,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         // Do any additional setup after loading the view.
         
         if Check == true{
-            print("들어오냐???")
+            print("GET IN")
             menu.expand(onController: self)
             MainView.bounceIn(from: .right)
             Check = false

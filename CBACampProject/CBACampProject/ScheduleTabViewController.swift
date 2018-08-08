@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
-import Firebase
-import FirebaseStorage
 
 class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var Hamberger: UIButton!
@@ -36,23 +33,20 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func downloadImage(name: String){
-        Storage.storage().reference(withPath: name).downloadURL { (url, error) in
-            self.imageView.kf.setImage(with: url)
-        }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView = UIImageView(image: UIImage(named: ""))
         imageView.contentMode = UIViewContentMode.scaleAspectFit
 
-        downloadImage(name: "timetable.png")
+        FirebaseModel().downloadImage(name: "timetable.png", imageView: imageView)
         
         imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (self.view.frame.size))
+        imageView.frame.size.height = imageView.frame.size.height - 100
         ScrollView.addSubview(imageView)
         
-        ScrollView.contentSize = (self.view.frame.size)
+        ScrollView.contentSize = (imageView.frame.size)
         
         var doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScheduleTabViewController.scrollViewDoubleTapped(_:)))
         doubleTapRecognizer.numberOfTapsRequired = 2

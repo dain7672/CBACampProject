@@ -67,14 +67,18 @@ class MassageTabViewController: UIViewController {
             profileimgview.frame = CGRect(x:20, y:20, width: 40, height: 40)
             profileimgview.contentMode = UIViewContentMode.scaleAspectFill
             profileimgview.clipsToBounds = true //image set 전에 해주어야 한다.
-            profileimgview.image = UIImage(named: "Icon-60@3x.png")
+            if (FirebaseModel.messages[count - i - 1].auth == "STAFF") {
+                profileimgview.image = UIImage(named: "Icon-60@3x.png")
+            } else {
+                profileimgview.image = UIImage(named:"profile.png")
+            }
             profileimgview.layer.cornerRadius = profileimgview.frame.width / 2
             cellview.addSubview(profileimgview)
             nextypos = Int(profileimgview.frame.origin.y + profileimgview.frame.size.height + 15)
             
             ///namelabel
             let namelabel = UILabel()
-            namelabel.text = "성락교회 대학선교회 CBA"
+            namelabel.text = FirebaseModel.messages[count - i - 1].auth
             namelabel.font = UIFont(name: "NotoSans-Bold", size: 17.0)!
             namelabel.sizeToFit()
             namelabel.frame.origin = CGPoint(x: 70, y: 20)
