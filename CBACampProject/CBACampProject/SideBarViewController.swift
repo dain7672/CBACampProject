@@ -159,7 +159,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImages.count), height: pagesScrollViewSize.height)
             
             //self.downloadImageNames = ["campus_place1.png","campus_place2.png","campus_place3.png"]
-            self.downloadImageNames = ["campus_place1.png","mealwork.png","menu.png"]
+            self.downloadImageNames = ["campus_place1.png","campus_place2.png","campus_place3.png"]
             self.loadVisiblePages()
         }
         
