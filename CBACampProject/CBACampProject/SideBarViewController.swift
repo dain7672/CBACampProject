@@ -15,6 +15,8 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
     @IBOutlet var MainView: UIView!
     @IBOutlet weak var BackOutlet: UIButton!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
@@ -82,6 +84,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
     }
     
     func loadVisiblePages(){
+        self.imageView.isHidden = true
         let pageWidth = scrollView.frame.width
         let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
         pageControl.currentPage = page
@@ -116,6 +119,10 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
         //self.scrollView.frame.origin.y = 10
         self.scrollView.frame.size.width = self.view.frame.size.width
         self.scrollView.frame.size.height = self.view.frame.size.height - 90
+        
+        self.imageView.frame.origin = self.view.frame.origin
+        self.imageView.frame.size.width = self.view.frame.size.width
+        self.imageView.frame.size.height = self.view.frame.size.height - 90
         
         self.pageControl.frame.origin.y = self.view.frame.size.height - 40
         self.pageControl.frame.origin.x = self.view.frame.size.width / 2 - self.pageControl.frame.size.width / 2
@@ -168,14 +175,12 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
             self.loadVisiblePages()
         }
         
-        let menuItem3 = SideMenuItemFactory.make(title: "강의 안내") {
+        let menuItem3 = SideMenuItemFactory.make(title: "또래별 강의") {
             for view in self.pageViews {
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "winter-lecture.png")!,
-                                UIImage(named: "winter-lecture.png")!,
-                                UIImage(named: "winter-lecture.png")!]
+            self.pageImages = [UIImage(named: "또래별강의.jpeg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0
@@ -265,9 +270,7 @@ class SideBarViewController: UIViewController, UIScrollViewDelegate, SideMenuDel
                 view?.removeFromSuperview()
             }
             self.pageViews = []
-            self.pageImages = [UIImage(named: "winter-cleaning.png")!,
-                                UIImage(named: "winter-cleaning.png")!,
-                                UIImage(named: "winter-cleaning.png")!]
+            self.pageImages = [UIImage(named: "청소구역.jpeg")!]
             let pageCount = self.pageImages.count
             
             self.pageControl.currentPage = 0

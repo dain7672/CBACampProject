@@ -45,6 +45,8 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView = UIImageView(image: UIImage(named: ""))
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+
         downloadImage(name: "timetable.png")
         
         imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (self.view.frame.size))

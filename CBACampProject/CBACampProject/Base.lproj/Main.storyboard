@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zhP-D1-p2p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zhP-D1-p2p">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
         <array key="NotoSans-Bold.ttf">
             <string>NotoSans-Bold</string>
         </array>
@@ -179,8 +182,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-Uw-bsY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-Uw-bsY">
                                 <rect key="frame" x="0.0" y="64" width="320" height="420"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CampPoster.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="oHg-Kv-XZg">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <connections>
                                     <outlet property="delegate" destination="Wx2-yc-o0D" id="qsS-9b-vT9"/>
                                 </connections>
@@ -239,6 +248,7 @@
                     <connections>
                         <outlet property="BackOutlet" destination="dXK-aF-0oA" id="ko0-sZ-xKv"/>
                         <outlet property="MainView" destination="tZc-lt-Qq0" id="Afg-oG-dvJ"/>
+                        <outlet property="imageView" destination="oHg-Kv-XZg" id="dY9-Ls-PEy"/>
                         <outlet property="openMenuOutlet" destination="86n-Ww-05m" id="hY2-q1-Dky"/>
                         <outlet property="pageControl" destination="5va-ZZ-3Pb" id="Z0h-uN-ou8"/>
                         <outlet property="scrollView" destination="30Y-Uw-bsY" id="4kR-hj-DkS"/>
@@ -246,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGO-Ya-83f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2640.8000000000002" y="1137.192118226601"/>
+            <point key="canvasLocation" x="2640" y="1136.6197183098591"/>
         </scene>
         <!--CBAInfoTab-->
         <scene sceneID="so7-2Q-FTU">
@@ -486,6 +496,7 @@
     </scenes>
     <resources>
         <image name="Blog.png" width="395" height="375"/>
+        <image name="CampPoster.jpeg" width="3508" height="4961"/>
         <image name="Insta.png" width="414" height="415"/>
         <image name="Sapari.png" width="284" height="285"/>
         <image name="Youtube.png" width="431" height="413"/>

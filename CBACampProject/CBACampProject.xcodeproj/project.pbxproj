@@ -65,6 +65,8 @@
 		DB764E69210E2AA9006E72EB /* winter-meal.png in Resources */ = {isa = PBXBuildFile; fileRef = DB764E64210E2AA9006E72EB /* winter-meal.png */; };
 		DB764E6A210E2AA9006E72EB /* winter-cleaning.png in Resources */ = {isa = PBXBuildFile; fileRef = DB764E65210E2AA9006E72EB /* winter-cleaning.png */; };
 		DB764E6B210E2AA9006E72EB /* winter-menu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DB764E66210E2AA9006E72EB /* winter-menu.jpeg */; };
+		DBF11FB0211B35F100EE9B98 /* 청소구역.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DBF11FAF211B35F100EE9B98 /* 청소구역.jpeg */; };
+		DBF11FB2211B35F700EE9B98 /* 또래별강의.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DBF11FB1211B35F700EE9B98 /* 또래별강의.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +157,8 @@
 		DB764E65210E2AA9006E72EB /* winter-cleaning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "winter-cleaning.png"; sourceTree = "<group>"; };
 		DB764E66210E2AA9006E72EB /* winter-menu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "winter-menu.jpeg"; sourceTree = "<group>"; };
 		DB8291F6F1B62C27874E2A6E /* Pods-CBACampProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProjectTests/Pods-CBACampProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBF11FAF211B35F100EE9B98 /* 청소구역.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "청소구역.jpeg"; sourceTree = "<group>"; };
+		DBF11FB1211B35F700EE9B98 /* 또래별강의.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "또래별강의.jpeg"; sourceTree = "<group>"; };
 		DE653964FC37D8A319CC1C32 /* Pods-CBACampProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBACampProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CBACampProjectTests/Pods-CBACampProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +193,7 @@
 		042761BE2106E41400928EB7 = {
 			isa = PBXGroup;
 			children = (
+				DBF11FAE211B358500EE9B98 /* InformationPosters */,
 				DB764E48210C8722006E72EB /* font */,
 				04E3728421071B0300FB7304 /* Resource */,
 				042761C92106E41400928EB7 /* CBACampProject */,
@@ -327,6 +332,15 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		DBF11FAE211B358500EE9B98 /* InformationPosters */ = {
+			isa = PBXGroup;
+			children = (
+				DBF11FB1211B35F700EE9B98 /* 또래별강의.jpeg */,
+				DBF11FAF211B35F100EE9B98 /* 청소구역.jpeg */,
+			);
+			path = InformationPosters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF11FB2211B35F700EE9B98 /* 또래별강의.jpeg in Resources */,
 				04FC00E9210AEC0100528D7A /* Heart.png in Resources */,
 				DB764E69210E2AA9006E72EB /* winter-meal.png in Resources */,
 				04FC00E0210AEC0100528D7A /* Test4.png in Resources */,
@@ -453,6 +468,7 @@
 				DB764E4E210C87EA006E72EB /* NotoSans-Regular.ttf in Resources */,
 				04FC00EB210AEC0100528D7A /* CampText.png in Resources */,
 				DB764E5F210E0A3D006E72EB /* applybutton.png in Resources */,
+				DBF11FB0211B35F100EE9B98 /* 청소구역.jpeg in Resources */,
 				042761D52106E41600928EB7 /* LaunchScreen.storyboard in Resources */,
 				04FC00E7210AEC0100528D7A /* Main.jpg in Resources */,
 				DB764E67210E2AA9006E72EB /* winter-lecture.png in Resources */,
