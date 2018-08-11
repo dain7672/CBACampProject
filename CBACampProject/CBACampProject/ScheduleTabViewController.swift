@@ -39,8 +39,9 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         imageView = UIImageView(image: UIImage(named: ""))
         imageView.contentMode = UIViewContentMode.scaleAspectFit
-
-        FirebaseModel().downloadImage(name: "timetable.png", imageView: imageView)
+        imageView.image = UIImage(named: "timetable.png")!
+        //check whether there is updated image.
+        FirebaseModel().downloadImage(name: "iOS_timetable.png", imageView: imageView)
         
         imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (self.view.frame.size))
         imageView.frame.size.height = imageView.frame.size.height - 100

@@ -39,7 +39,11 @@ class FirebaseModel {
     
     func downloadImage(name: String, imageView:UIImageView){
         Storage.storage().reference(withPath: name).downloadURL { (url, error) in
+            if let error = error {
+
+            }else {
             imageView.kf.setImage(with: url)
+            }
         }
     }
     
