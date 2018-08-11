@@ -16,9 +16,9 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     
     
     
-    @IBOutlet weak var ScrollView: UIScrollView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
-    var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     var image : UIImage?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -37,31 +37,26 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView = UIImageView(image: UIImage(named: ""))
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
         imageView.image = UIImage(named: "timetable.png")!
         //check whether there is updated image.
         FirebaseModel().downloadImage(name: "iOS_timetable.png", imageView: imageView)
         
-        imageView.frame = CGRect(origin: CGPoint(x:0, y:0), size: (self.view.frame.size))
-        imageView.frame.size.height = imageView.frame.size.height - 100
-        ScrollView.addSubview(imageView)
-        
-        ScrollView.contentSize = (imageView.frame.size)
+        scrollView.contentSize = (imageView.frame.size)
         
         var doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScheduleTabViewController.scrollViewDoubleTapped(_:)))
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapRecognizer.numberOfTouchesRequired = 1
-        ScrollView.addGestureRecognizer(doubleTapRecognizer)
+        scrollView.addGestureRecognizer(doubleTapRecognizer)
         
-        let scrollViewFrame = ScrollView.frame
-        let scaleWidth = scrollViewFrame.size.width / ScrollView.contentSize.width
-        let scaleHeight = scrollViewFrame.size.height / ScrollView.contentSize.height
+        let scrollViewFrame = scrollView.frame
+        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
+        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
         let minScale = min(scaleWidth, scaleHeight)
-        ScrollView.minimumZoomScale = minScale
-        
-        ScrollView.maximumZoomScale = 1.0
-        ScrollView.zoomScale = minScale
+        scrollView.minimumZoomScale = minScale
+
+        scrollView.maximumZoomScale = 1.0
+        scrollView.zoomScale = minScale
         
         centerScrollViewContents()
         // Do any additional setup after loading the view.
@@ -69,7 +64,7 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func centerScrollViewContents(){
-        let boundsSize = ScrollView.bounds.size
+        let boundsSize = scrollView.bounds.size
         var contensFrame = imageView.frame
         
         if contensFrame.size.width < boundsSize.width{
@@ -88,10 +83,10 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
     @objc func scrollViewDoubleTapped(_ recognizer: UITapGestureRecognizer){
         let pointInView = recognizer.location(in: imageView)
         
-        var newZoomScale = ScrollView.zoomScale * 1.5
-        newZoomScale = min(newZoomScale, ScrollView.maximumZoomScale)
+        var newZoomScale = scrollView.zoomScale * 1.5
+        newZoomScale = min(newZoomScale, scrollView.maximumZoomScale)
         
-        let scrollViewSize = ScrollView.bounds.size
+        let scrollViewSize = scrollView.bounds.size
         let w = scrollViewSize.width / newZoomScale
         let h = scrollViewSize.height / newZoomScale
         let x = pointInView.x - (w/2.0)
@@ -99,7 +94,7 @@ class ScheduleTabViewController: UIViewController, UIScrollViewDelegate {
         
         let rectToZoomTo = CGRect(x: x, y:y, width: w, height: h)
         
-        ScrollView.zoom(to: rectToZoomTo, animated: true)
+        scrollView.zoom(to: rectToZoomTo, animated: true)
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

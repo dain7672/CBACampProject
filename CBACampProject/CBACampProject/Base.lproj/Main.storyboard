@@ -25,8 +25,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdq-kG-DJy">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdq-kG-DJy">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1a2-c9-LBO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1a2-c9-LBO" firstAttribute="centerY" secondItem="wdq-kG-DJy" secondAttribute="centerY" id="10I-pr-LjG"/>
+                                    <constraint firstItem="1a2-c9-LBO" firstAttribute="centerX" secondItem="wdq-kG-DJy" secondAttribute="centerX" id="AoE-qp-OYf"/>
+                                    <constraint firstItem="1a2-c9-LBO" firstAttribute="top" secondItem="wdq-kG-DJy" secondAttribute="top" id="FYz-pb-vpp"/>
+                                    <constraint firstItem="1a2-c9-LBO" firstAttribute="leading" secondItem="wdq-kG-DJy" secondAttribute="leading" id="Oia-P6-Kre"/>
+                                    <constraint firstAttribute="trailing" secondItem="1a2-c9-LBO" secondAttribute="trailing" id="h7c-wt-eom"/>
+                                    <constraint firstAttribute="bottom" secondItem="1a2-c9-LBO" secondAttribute="bottom" id="xq5-5j-b6p"/>
+                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-tg-2Ey">
                                 <rect key="frame" x="10" y="23" width="30" height="30"/>
@@ -49,14 +62,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wdq-kG-DJy" firstAttribute="trailing" secondItem="w0D-gp-h3P" secondAttribute="trailing" id="2Kk-xp-mja"/>
+                            <constraint firstItem="wdq-kG-DJy" firstAttribute="bottom" secondItem="w0D-gp-h3P" secondAttribute="bottom" id="70V-K1-l8a"/>
                             <constraint firstItem="kLR-tg-2Ey" firstAttribute="leading" secondItem="w0D-gp-h3P" secondAttribute="leading" constant="10" id="AGg-uM-vhe"/>
                             <constraint firstItem="wdq-kG-DJy" firstAttribute="leading" secondItem="w0D-gp-h3P" secondAttribute="leading" id="FTe-sh-Mpi"/>
                             <constraint firstItem="kLR-tg-2Ey" firstAttribute="top" secondItem="w0D-gp-h3P" secondAttribute="top" constant="3" id="Ipb-Sr-cb6"/>
                             <constraint firstItem="kLR-tg-2Ey" firstAttribute="top" secondItem="w0D-gp-h3P" secondAttribute="top" constant="5" id="JPU-Jp-cN2"/>
+                            <constraint firstItem="wdq-kG-DJy" firstAttribute="leading" secondItem="w0D-gp-h3P" secondAttribute="leading" id="NCf-y5-8vB"/>
                             <constraint firstItem="w0D-gp-h3P" firstAttribute="trailing" secondItem="wdq-kG-DJy" secondAttribute="trailing" id="Pk5-bU-cFo"/>
                             <constraint firstItem="kLR-tg-2Ey" firstAttribute="leading" secondItem="w0D-gp-h3P" secondAttribute="leading" constant="10" id="RzC-4S-I4T"/>
                             <constraint firstItem="kLR-tg-2Ey" firstAttribute="top" secondItem="w0D-gp-h3P" secondAttribute="top" constant="3" id="X9u-Cw-Mn8"/>
                             <constraint firstItem="wdq-kG-DJy" firstAttribute="top" secondItem="vdb-bn-i9b" secondAttribute="bottom" constant="5" id="YcW-dZ-ksF"/>
+                            <constraint firstItem="wdq-kG-DJy" firstAttribute="top" secondItem="vdb-bn-i9b" secondAttribute="bottom" constant="5" id="dSn-vx-Tzy"/>
                             <constraint firstItem="vdb-bn-i9b" firstAttribute="centerX" secondItem="kaT-zf-geO" secondAttribute="centerX" id="doP-sT-Q2i"/>
                             <constraint firstItem="w0D-gp-h3P" firstAttribute="bottom" secondItem="wdq-kG-DJy" secondAttribute="bottom" id="epp-bI-anf"/>
                             <constraint firstItem="wdq-kG-DJy" firstAttribute="top" secondItem="kLR-tg-2Ey" secondAttribute="bottom" constant="11" id="rt8-8M-H3W"/>
@@ -66,12 +83,13 @@
                     <tabBarItem key="tabBarItem" title="시간표" image="ic_schedule" id="x95-dI-gyH"/>
                     <connections>
                         <outlet property="Hamberger" destination="kLR-tg-2Ey" id="0YP-6m-nH1"/>
-                        <outlet property="ScrollView" destination="wdq-kG-DJy" id="j2u-BV-KVO"/>
+                        <outlet property="imageView" destination="1a2-c9-LBO" id="IQh-aC-aX3"/>
+                        <outlet property="scrollView" destination="wdq-kG-DJy" id="j2u-BV-KVO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPQ-40-k4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125.5999999999999" y="1137.9310344827586"/>
+            <point key="canvasLocation" x="1125" y="1137.6760563380283"/>
         </scene>
         <!--MassageTab-->
         <scene sceneID="vBs-0e-AfM">
